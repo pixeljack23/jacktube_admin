@@ -90,7 +90,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 async function checkAuth() {
   const { data: { session } } = await supabase.auth.getSession();
   if (!session) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   } else {
     document.getElementById("adminBox").style.display = "block";
   }
@@ -145,7 +145,7 @@ async function saveVideo() {
 // Logout
 async function logout() {
   await supabase.auth.signOut();
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 // Event listeners
@@ -157,3 +157,4 @@ checkAuth();
 </script>
 </body>
 </html>
+
